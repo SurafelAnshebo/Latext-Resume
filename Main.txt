@@ -1,0 +1,262 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages
+\usepackage[
+    ignoreheadfoot, % Set margins without considering header and footer
+    top=2cm, % Top margin
+    bottom=2cm, % Bottom margin
+    left=2cm, % Left margin
+    right=2cm, % Right margin
+    footskip=1.0cm % Separation between body and footer
+]{geometry}
+\usepackage{titlesec} % Customize section titles
+\usepackage{tabularx} % Tables with fixed-width columns
+\usepackage{array} % Needed for tabularx
+\usepackage[dvipsnames]{xcolor} % Text coloring
+\definecolor{primaryColor}{RGB}{0, 0, 0} % Define primary color
+\usepackage{enumitem} % Custom lists
+\usepackage{fontawesome5} % Icons
+\usepackage{amsmath} % Math support
+\usepackage[
+    pdftitle={Surafel Anshebo's CV},
+    pdfauthor={Surafel Anshebo},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % Links, metadata, bookmarks
+\usepackage[pscoord]{eso-pic} % Floating text on the page
+\usepackage{calc} % Length calculations
+\usepackage{bookmark} % Bookmarks
+\usepackage{lastpage} % Total number of pages
+\usepackage{changepage} % Adjustwidth environment for one-column entries
+\usepackage{paracol} % Two- and three-column entries
+\usepackage{ifthen} % Conditional statements
+\usepackage{needspace} % Avoid page break after section titles
+\usepackage{iftex} % Engine checks (pdfLaTeX, XeTeX, LuaTeX)
+
+% Machine-readable PDF settings
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter} % Font
+
+% General settings
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % Remove space before adjustwidth environment
+\pagestyle{empty} % No header or footer
+\setcounter{secnumdepth}{0} % No section numbering
+\setlength{\parindent}{0pt} % No indentation
+\setlength{\topskip}{0pt} % No top skip
+\setlength{\columnsep}{0.15cm} % Column separation
+\pagenumbering{gobble} % No page numbering
+
+% Section title formatting
+\titleformat{\section}{\needspace{4\baselineskip}\centering\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+    -1pt % Left space
+}{
+    0.3cm % Top space
+}{
+    0.2cm % Bottom space
+}
+
+% Custom bullet points
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+% Highlights environment
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.1cm,
+        parsep=0.1cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0cm+10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% Highlights for bullet entries
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.1cm,
+        parsep=0.1cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% One-column entry environment
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0cm+0.00001cm
+    }{
+        0cm+0.00001cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+% Two-column entry environment
+\newenvironment{twocolentry}[2]{
+    \begin{adjustwidth}{0cm}{0cm}
+        \textbf{#1} \hfill \textit{#2}
+    \end{adjustwidth}
+}
+
+% Header environment
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+% Place last updated text
+\newcommand{\placelastupdatedtext}{
+  \AddToShipoutPictureFG*{
+    \put(
+        \LenToUnit{\paperwidth-2cm-0cm+0.05cm},
+        \LenToUnit{\paperheight-1.0cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}
+  }
+}
+
+% Begin document
+\begin{document}
+
+\begin{header}
+    \fontsize{25pt}{25pt}\selectfont Surafel Anshebo
+
+    \vspace{5pt}
+
+    \normalsize
+    \begin{tabular}{@{}l@{}}
+        \textbf{Blacksburg, VA} | 
+        \textbf{\href{mailto:Surafela@vt.edu}{Surafela@vt.edu}} |
+        \textbf{\href{tel:+1-540-558-3768}{540-558-3768}} | 
+        \textbf{\href{https://github.com/SurafelTesfaye}{github.com/SurafelTesfaye}} |
+        \textbf{\href{https://www.linkedin.com/in/surafeltesfaye21/}{linkedin.com/in/surafeltesfaye21/}}
+    \end{tabular}
+\end{header}
+
+\section{Education}
+
+\begin{twocolentry}{Virginia Tech}{May 2023 -- Present}
+    MSc - Mechanical Engineering
+\end{twocolentry}
+
+\vspace{0.1cm}
+
+\begin{twocolentry}{Addis Ababa Science and Technology University}{2013 -- 2018}
+    BSc - Mechanical Engineering
+\end{twocolentry}
+
+\vspace{0.1cm}
+
+\section{Experience}
+
+\begin{twocolentry}{Graduate Research Assistant, Virginia Tech}{May 2023 -- Present}
+\end{twocolentry}
+
+\vspace{0.1cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Implemented a Dockerized simulation environment for ArduPilot SITL, integrated with Flask.
+        \item Built ground and air risk map using Leaflet.js and QGIS for Beyond Visual Line of Sight (BVLOS) simulations.
+        \item Developed and deployed flight management software adhering to Association for Uncrewed Vehicle Systems International
+        (AUVSI) standards, incorporating flight requests, pre/post-flight procedures, and safety reporting system.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2cm}
+
+\begin{twocolentry}{Line Process Engineer, Coca Cola Beverages}{June 2003 -- Aug 2003}
+\end{twocolentry}
+
+\vspace{0.1cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed an optimized level control system for the fuel and condensed water return tanks of an 8-ton boiler, enhancing
+        operational efficiency, improving safety, and achieving annual cost savings of \$12,000.
+        \item Optimized Overall Equipment Efficiency (OEE) by understanding machine structures, detecting abnormalities, and conducting Root Cause Analysis (RCA) using SAP.
+        \item Maintained 90\% Machine Efficiency (ME) and 85\% Unconstrained System Line Efficiency (USLE) ensuring operational reliability.
+        \item Ensured compliance with Safety, Health, Environment, and Quality (SHEQ) standards.
+    \end{highlights}
+\end{onecolentry}
+
+\section{Skills}
+\begin{onecolentry}
+    \textbf{Software:} Python, C++, MATLAB, ROS, Flask, Docker, OpenCV, SolidWorks, QGIS, SAP
+\end{onecolentry}
+\begin{onecolentry}
+    \textbf{Hardware:} Raspberry Pi, STM32, Arduino, Vicon motion capture, 3D Printing
+\end{onecolentry}
+\begin{onecolentry}
+    \textbf{Certifications:} Part 107, SolidWorks Associate (CSWA)
+\end{onecolentry}
+\begin{onecolentry}
+    \textbf{Selected coursework:} Applied Linear Control, Computer Vision, Advanced Mechatronics
+\end{onecolentry}
+
+\section{Projects}
+
+\begin{onecolentry}
+    \textbf{Vicon Motion Capture for Indoor Flight} \\
+    \begin{highlights}
+        \item Conducted system calibration to minimize tracking errors, ensuring millimeter accuracy in position estimation.
+        \item Implemented an Extended Kalman Filter (EKF) for sensor fusion enabling precise position and altitude estimation.
+        \item Deployed ROS nodes on a Raspberry Pi companion computer to handle communication between the motion capture system and Pixhawk flight controller.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2cm}
+
+\begin{onecolentry}
+    \textbf{Full State Feedback Control Using Pole Placement} \\
+    \begin{highlights}
+        \item Optimized system dynamics using pole placement techniques, ensuring stable descent.
+        \item Developed closed-loop control using Linear-Quadratic Regulator (LQR) and Luenberger Observer for accurate trajectory tracking with 5\% settling time in 3 seconds in MATLAB.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.2cm}
+
+\begin{onecolentry}
+    \textbf{Flood Mapping, Search and Rescue Operation Using S500 Drone} \\
+    \begin{highlights}
+        \item Mapped areas prone to flood hazards using aerial imagery processed in QGIS.
+        \item Designed a gripper in SolidWorks to be mounted on S500 drones for delivering lifesaving vests.
+    \end{highlights}
+\end{onecolentry}
+
+\section{Publications}
+\begin{itemize}[leftmargin=*, label={$\bullet$}]
+    \item D. Aggarwal, \textbf{S.T. Anshebo}, K. Kochersberger, A.L. Abbott. \\
+    ``Comparative Study of Vision-Based Methods for Real-Time Traffic Monitoring'' \\
+    \textit{XPONENTIAL 2024 Conference}, pp. 68--79. DOI: \\
+    \href{https://doi.org/10.52202/075106-0004}{10.52202/075106-0004}.
+    
+    \item \textbf{S.T. Anshebo}, K. Kochersberger. \\
+    ``Beyond Visual Line of Sight Drone Simulator with User-Defined Risk Layers'' \\
+    \textit{SPIE Defense+Commercial Sensing} (Accepted).
+\end{itemize}
+
+\section{Leadership}
+\begin{onecolentry}
+    \begin{highlightsforbulletentries}
+        \item Maintained financial records and ensured all accounts and records adhered to school and ASME policies.
+    \end{highlightsforbulletentries}
+\end{onecolentry}
+
+\end{document}
