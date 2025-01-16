@@ -1,10 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  Resume Template written by Surafel Anshebo
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[10pt, letterpaper]{article}
 
 % Packages
 \usepackage[
     ignoreheadfoot, % Set margins without considering header and footer
-    top=2cm, % Top margin
-    bottom=2cm, % Bottom margin
+    top=0.5cm, % Top margin
+    bottom=0.5cm, % Bottom margin
     left=2cm, % Left margin
     right=2cm, % Right margin
     footskip=1.0cm % Separation between body and footer
@@ -21,7 +27,8 @@
     pdftitle={Surafel Anshebo's CV},
     pdfauthor={Surafel Anshebo},
     pdfcreator={LaTeX with RenderCV},
-    colorlinks=true,
+    % colorlinks=true,
+    hidelinks
     urlcolor=primaryColor
 ]{hyperref} % Links, metadata, bookmarks
 \usepackage[pscoord]{eso-pic} % Floating text on the page
@@ -56,14 +63,14 @@
 \pagenumbering{gobble} % No page numbering
 
 % Section title formatting
-\titleformat{\section}{\needspace{4\baselineskip}\centering\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{4\baselineskip}\centering\bfseries\large}{}{0pt}{}[\vspace{0.5ex}\titlerule]
 
 \titlespacing{\section}{
     -1pt % Left space
 }{
-    0.3cm % Top space
+    0.2cm % Top space
 }{
-    0.2cm % Bottom space
+    0.1cm % Bottom space
 }
 
 % Custom bullet points
@@ -72,8 +79,8 @@
 % Highlights environment
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.1cm,
-        parsep=0.1cm,
+        topsep=0.05cm,
+        parsep=0.05cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0cm+10pt
@@ -85,8 +92,8 @@
 % Highlights for bullet entries
 \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
-        topsep=0.1cm,
-        parsep=0.1cm,
+        topsep=0.05cm,
+        parsep=0.05cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=10pt
@@ -115,7 +122,7 @@
 
 % Header environment
 \newenvironment{header}{
-    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.2}
 }{
     \par\kern\topsep
 }
@@ -145,7 +152,7 @@
         \textbf{Blacksburg, VA} | 
         \textbf{\href{mailto:Surafela@vt.edu}{Surafela@vt.edu}} |
         \textbf{\href{tel:+1-540-558-3768}{540-558-3768}} | 
-        \textbf{\href{https://github.com/SurafelTesfaye}{github.com/SurafelTesfaye}} |
+        \textbf{\href{https://github.com/SurafelAnshebo}{github.com/SurafelAnshebo}} |
         \textbf{\href{https://www.linkedin.com/in/surafeltesfaye21/}{linkedin.com/in/surafeltesfaye21/}}
     \end{tabular}
 \end{header}
@@ -156,20 +163,20 @@
     MSc - Mechanical Engineering
 \end{twocolentry}
 
-\vspace{0.1cm}
+\vspace{0.05cm}
 
 \begin{twocolentry}{Addis Ababa Science and Technology University}{2013 -- 2018}
     BSc - Mechanical Engineering
 \end{twocolentry}
 
-\vspace{0.1cm}
+\vspace{0.05cm}
 
 \section{Experience}
 
 \begin{twocolentry}{Graduate Research Assistant, Virginia Tech}{May 2023 -- Present}
 \end{twocolentry}
 
-\vspace{0.1cm}
+\vspace{0.05cm}
 \begin{onecolentry}
     \begin{highlights}
         \item Implemented a Dockerized simulation environment for ArduPilot SITL, integrated with Flask.
@@ -179,16 +186,16 @@
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2cm}
+\vspace{0.1cm}
 
 \begin{twocolentry}{Line Process Engineer, Coca Cola Beverages}{June 2003 -- Aug 2003}
 \end{twocolentry}
 
-\vspace{0.1cm}
+\vspace{0.05cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Developed an optimized level control system for the fuel and condensed water return tanks of an 8-ton boiler, enhancing
-        operational efficiency, improving safety, and achieving annual cost savings of \$12,000.
+        \item 
+        Designed and implemented an optimized level control system for the fuel tank and condensed water return tank of an 8-ton boiler, in compliance with ISO 12100 standards for machinery safety and risk reduction. Achieved enhanced operational efficiency, improved safety measures, and generated annual cost savings of \$12,000.
         \item Optimized Overall Equipment Efficiency (OEE) by understanding machine structures, detecting abnormalities, and conducting Root Cause Analysis (RCA) using SAP.
         \item Maintained 90\% Machine Efficiency (ME) and 85\% Unconstrained System Line Efficiency (USLE) ensuring operational reliability.
         \item Ensured compliance with Safety, Health, Environment, and Quality (SHEQ) standards.
@@ -220,7 +227,7 @@
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2cm}
+\vspace{0.1cm}
 
 \begin{onecolentry}
     \textbf{Full State Feedback Control Using Pole Placement} \\
@@ -230,7 +237,7 @@
     \end{highlights}
 \end{onecolentry}
 
-\vspace{0.2cm}
+\vspace{0.1cm}
 
 \begin{onecolentry}
     \textbf{Flood Mapping, Search and Rescue Operation Using S500 Drone} \\
@@ -242,20 +249,19 @@
 
 \section{Publications}
 \begin{itemize}[leftmargin=*, label={$\bullet$}]
-    \item D. Aggarwal, \textbf{S.T. Anshebo}, K. Kochersberger, A.L. Abbott. \\
-    ``Comparative Study of Vision-Based Methods for Real-Time Traffic Monitoring'' \\
-    \textit{XPONENTIAL 2024 Conference}, pp. 68--79. DOI: \\
+    \item D. Aggarwal, \textbf{S.T. Anshebo}, K. Kochersberger, A.L. Abbott.   ``Comparative Study of Vision-Based Methods for Real-Time Traffic Monitoring'' 
+    \textit{XPONENTIAL 2024 Conference}, pp. 68--79. DOI: 
     \href{https://doi.org/10.52202/075106-0004}{10.52202/075106-0004}.
     
-    \item \textbf{S.T. Anshebo}, K. Kochersberger. \\
-    ``Beyond Visual Line of Sight Drone Simulator with User-Defined Risk Layers'' \\
+    \item \textbf{S.T. Anshebo}, K. Kochersberger. 
+    ``Beyond Visual Line of Sight Drone Simulator with User-Defined Risk Layers'' 
     \textit{SPIE Defense+Commercial Sensing} (Accepted).
 \end{itemize}
 
 \section{Leadership}
 \begin{onecolentry}
     \begin{highlightsforbulletentries}
-        \item Maintained financial records and ensured all accounts and records adhered to school and ASME policies.
+        \item Managed financial records and ensured all accounts and records adhered to school and ASME policies.
     \end{highlightsforbulletentries}
 \end{onecolentry}
 
